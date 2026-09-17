@@ -1,27 +1,25 @@
 {% extends 'acervo/base.html' %}
 
 {% block conteudo %}
-<h1>Livros</h1>
-<h2>Digital</h2>
-{% for livro in livros %}
-<ul>
-    {% if livro.tipo == 'digital' %}
-    <li>{{livro.titulo}} - {{livro.autor}} - {{livro.ano}}</li>
+<h3>Livros</h3>
+<form method="get">
+    <input type="text" name="buscalibros" placeholder="Pesquisar livro por título, tipo ou categoria"
+    value="{{request.GET.buscalibros|default:''}}" autocomplete="off">
+    <button type="submit">Buscar</button>
+    {% if request.GET.q %}
+        <a href="?">Limpar</a>
     {% endif %}
-    {% empty %}
-    <li>Nenhum livro digital Cadastrado</li>
-    {% endfor %}
-</ul>
+</form>
 
-<h2>Fisico</h2>
-{% for livro in livros %}
 <ul>
-    {% if livro.tipo == 'fisico' %}
-    <li>{{livro.titulo}} - {{livro.autor}} - {{livro.ano}}</li>
-    {% endif %}
-    
+    {% for livro in livros %}
+    <li>{{livro.titulo}} - {{livro.autor}} - {{livro.ano}}
+        {{ livro.get_tipo_display }} - {{ livro.get_categoria_display }}
+    </li>
     {% empty %}
-    <li>Nenhum livro digital Cadastrado</li>
+
+    <li>nenhum livro cadastrado</li>
+
     {% endfor %}
 </ul>
 

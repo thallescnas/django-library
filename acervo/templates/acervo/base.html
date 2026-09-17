@@ -1,8 +1,18 @@
+{% load static %}
 <html>
+    <head>
+        <link rel="stylesheet" href= "{% static 'style.css' %}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
 <body>
     <header>
-        Livros do bigodão
+        <h1>Livros do bigodão</h1>
+        <br>
+        <a href="cadastrar">cadastrar livro</a>
+        <a href="{{livro}}">lista de livros</a>
     </header>
+    <br>
     {% block conteudo %}
     {% endblock %}
     <footer>

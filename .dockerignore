@@ -1,0 +1,6 @@
+.venv/
+.gitignore
+acervo/__pycache__/
+biblioteca/__pycache__/
+acervo/migrations/__pycache__
+.env

@@ -2,4 +2,4 @@
 biblioteca/__pycache__
 acervo/__pycache__
 acervo/migrations/__pycache__
-db.sqlite3
+.env
