@@ -1,0 +1,24 @@
+<h1>Livros</h1>
+<h2>Digital</h2>
+{% for livro in livros %}
+<ul>
+    {% if livro.tipo == 'digita'l %}
+    <li>{{livro.titulo}} - {{livro.autor}} - {{livro.ano}}</li>
+
+    {% empty %}
+    <li>Nenhum livro digital Cadastrado</li>
+    {% endif %}
+    {% endfor %}
+</ul>
+
+<h2>Fisico</h2>
+{% for livro in livros %}
+<ul>
+    {% if livro.tipo == 'fisico' %}
+    <li>{{livro.titulo}} - {{livro.autor}} - {{livro.ano}}</li>
+    
+    {% empty %}
+    <li>Nenhum livro digital Cadastrado</li>
+    {% endif %}
+    {% endfor %}
+</ul>
