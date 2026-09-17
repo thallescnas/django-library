@@ -1,13 +1,15 @@
+{% extends 'acervo/base.html' %}
+
+{% block conteudo %}
 <h1>Livros</h1>
 <h2>Digital</h2>
 {% for livro in livros %}
 <ul>
-    {% if livro.tipo == 'digita'l %}
+    {% if livro.tipo == 'digital' %}
     <li>{{livro.titulo}} - {{livro.autor}} - {{livro.ano}}</li>
-
+    {% endif %}
     {% empty %}
     <li>Nenhum livro digital Cadastrado</li>
-    {% endif %}
     {% endfor %}
 </ul>
 
@@ -16,9 +18,11 @@
 <ul>
     {% if livro.tipo == 'fisico' %}
     <li>{{livro.titulo}} - {{livro.autor}} - {{livro.ano}}</li>
+    {% endif %}
     
     {% empty %}
     <li>Nenhum livro digital Cadastrado</li>
-    {% endif %}
     {% endfor %}
 </ul>
+
+{% endblock %}
